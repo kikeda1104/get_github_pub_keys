@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1.0"
   s.add_dependency "faraday", "~> 0.8.9"
   s.add_dependency "faraday_middleware"
+  s.add_dependency "rspec"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry"
