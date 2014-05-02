@@ -1,11 +1,6 @@
 # coding: utf-8
 
 
-unless ENV['CI']
-  require 'simplecov' 
-  SimpleCov.start
-end
-
 require 'get_github_pub_keys'
 require 'rspec'
 require 'webmock/rspec'
