@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'logger'
 
 module GetGithubPubKeys
   module Files
@@ -19,8 +20,14 @@ module GetGithubPubKeys
         Dir.mkdir("#{env["HOME"]}/#{@path}")
       end
 
+      # public_keys file create to .ssh directory.
       def create( file_name, body )
-        File.write(file_name, body)
+        begin
+          file_name = file_name.to_s
+          File.write(@path + '/' + file_name.to_s, body)
+        rescue
+
+        end
       end
     end
   end
