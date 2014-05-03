@@ -18,6 +18,10 @@ module GetGithubPubKeys
       def ssh_create
         Dir.mkdir("#{env["HOME"]}/#{@path}")
       end
+
+      def create( file_name, body )
+        File.write(file_name, body)
+      end
     end
   end
 end
