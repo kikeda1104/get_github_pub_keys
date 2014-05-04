@@ -1,3 +1,3 @@
 # coding: utf-8
 
-require 'files/access'
+require 'get_github_pub_keys/files/access'

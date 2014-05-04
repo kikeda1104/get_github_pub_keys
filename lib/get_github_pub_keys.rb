@@ -1,19 +1,14 @@
 # coding: utf-8
 
-require 'faraday'
 require 'get_github_pub_keys/connection'
 require 'get_github_pub_keys/files'
+require 'get_github_pub_keys/client'
 
 module GetGithubPubKeys
-  class Request
+  include Client
+  class GetData
     def initialize(user)
       @user = user
-    end
-
-    def request
-      faraday = Connection.new
-      response = faraday.connection().get("users/#{@user}/keys")
-      response.body
     end
   end
 end
