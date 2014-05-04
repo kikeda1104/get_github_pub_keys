@@ -21,13 +21,13 @@ module GetGithubPubKeys
       end
 
       # public_keys file create to .ssh directory.
-      def create( file_name, body )
-        begin
-          file_name = file_name.to_s
-          File.write(@path + '/' + file_name.to_s, body)
-        rescue
-
-        end
+      def self.create( file_name, body )
+        file_name = file_name.to_s
+        File.write(@path + '/' + file_name.to_s, body)
+      rescue => e
+        puts e.message
+        # FIXME: exec raise
+        nil
       end
     end
   end

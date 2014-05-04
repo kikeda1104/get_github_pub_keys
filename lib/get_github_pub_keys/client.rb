@@ -12,12 +12,25 @@ module GetGithubPubKeys
       @path = path
     end
 
+    # confirm .ssh directory
+    def confirm
+      ssh_create unless ssh_exists?
+    rescue
+      raise ".ssh don't exists."
+    end
+
     def find( options = {} )
-      # options
-      # FIXME:
       con = Connection.new
       response = con.connection(options).get("users/#{@user}/keys")   
-      response.body
+      public_keys = response.body
+      if public_keys.is_a? Array
+        public_keys.each do |public_key| 
+          Files.write(public_key[:id], public_key[:key])
+        end
+      else
+        Files.write(public_key[:id], public_key[:key])
+      end
     end
   end
 end
+

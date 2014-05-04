@@ -1,9 +1,8 @@
 # coding: utf-8
-
 require 'faraday'
 
 module GetGithubPubKeys
-  class Request
+  module Request
     def request(http_method, path, options) 
       options = default_options.merge(options)
        
