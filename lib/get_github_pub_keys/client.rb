@@ -24,10 +24,16 @@ module GetGithubPubKeys
 
       if public_keys.is_a? Array
         public_keys.each do |public_key| 
-          Files.write(public_key[:id], public_key[:key])
+          puts "============================"
+          puts "create files"
+          Files.write(public_key["id"].to_s, public_key["key"])
+          puts "============================"
         end
       else
-        Files.write(public_key[:id], public_key[:key])
+        puts "============================"
+        puts "create files"
+        Files.write(public_keys["id"].to_s, public_keys["key"])
+        puts "============================"
       end
     end
   end
