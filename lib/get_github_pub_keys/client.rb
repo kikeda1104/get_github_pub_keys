@@ -19,7 +19,7 @@ module GetGithubPubKeys
     end
 
     def find( options = {} )
-      response = Connection::connection(options).get("users/#{@user}/keys")   
+      response = Connection.new(options).get("users/#{@user}/keys")   
       public_keys = response.body
 
       if public_keys.is_a? Array
