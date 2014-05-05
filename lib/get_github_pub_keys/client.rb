@@ -24,15 +24,17 @@ module GetGithubPubKeys
 
       if public_keys.is_a? Array
         public_keys.each do |public_key| 
+          # FIXME: only develop mode
           puts "============================"
           puts "create files"
-          Files.write(public_key["id"].to_s, public_key["key"])
+          GetGithubPubKeys::Files.create public_key["id"], public_key["key"]
           puts "============================"
         end
       else
+        # FIXME: only develop mode
         puts "============================"
         puts "create files"
-        Files.write(public_keys["id"].to_s, public_keys["key"])
+        GetGithubPubKeys::Files.create public_keys["id"], public_keys["key"]
         puts "============================"
       end
     end
