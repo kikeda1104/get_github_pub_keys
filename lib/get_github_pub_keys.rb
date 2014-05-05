@@ -6,14 +6,8 @@ require 'get_github_pub_keys/files'
 require 'get_github_pub_keys/client'
 
 module GetGithubPubKeys
-  include Client
-  class GetData
-    def initialize(user)
-      @user = user
-    end
-
-    def create
-      
-    end
+  def self.new(user = nil)
+    return if user.nil?
+    Client.new(user)
   end
 end
