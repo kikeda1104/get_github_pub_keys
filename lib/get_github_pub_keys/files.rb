@@ -1,3 +1,32 @@
 # coding: utf-8
+require 'logger'
 
-require 'get_github_pub_keys/files/access'
+module GetGithubPubKeys
+  module Files
+    DEFAULT_SSH_DIRECTORY = ".ssh"
+    attr_accessor :path
+
+    def initialize
+      @path = DEFAULT_SSH_DIRECTORY
+    end
+    # This method confirm exists .ssh directory. 
+    def ssh_exists?
+      File.exists(@path)
+    end
+    #
+    # create /HOME_DIRECOTY/.ssh directory
+    def ssh_create
+      Dir.mkdir("#{env["HOME"]}/#{@path}")
+    end
+
+    # public_keys file create to .ssh directory.
+    def self.create( file_name, body )
+      file_name = file_name.to_s + Time.now.strftime("%Y%0m%0d")
+      File.write(@path + '/' + file_name.to_s, body)
+    rescue => e
+      puts e.message
+      nil
+    end
+  end
+end
+

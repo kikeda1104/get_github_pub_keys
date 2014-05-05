@@ -3,7 +3,7 @@ require 'faraday'
 
 module GetGithubPubKeys
   module Connection
-    def connection( options = {} )
+    def self.connection( options = {} )
       Faraday.new( url: 'https://api.github.com' ) do |faraday|
         faraday.request :url_encoded
         faraday.response :logger
