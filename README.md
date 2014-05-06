@@ -2,7 +2,7 @@
 
 ### githubの公開鍵をローカルにファイルとして保存するgem
 
-### Installtion
+## Installtion
 
 1) ローカルで以下のコマンドを実行してください
 ```:bach
@@ -18,7 +18,7 @@ GetGithubPubKeys.new(user_name)
 GetGithubPubKeys.find_and_create
 ```
 
-まだテスト、機能面で不足がある開発版です。
+(まだテスト、機能面で不足がある開発版です)
 
 ## Contributing
 
