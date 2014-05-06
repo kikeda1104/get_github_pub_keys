@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["gankai1104@gmail.com"]
   s.homepage    = "https://github.com/kikeda1104/get_github_pub_keys"
   s.summary     = "The gem get public_keys from github"
-  s.description = "TODO"
+  s.description = "This gem get publick_keys from registered of github."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -23,6 +23,4 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rspec"
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "pry"
-  s.add_development_dependency "pry-byebug"
 end

@@ -18,28 +18,18 @@ module GetGithubPubKeys
       raise ".ssh don't exists."
     end
 
-    def find( options = {} )
+    def find_and_create( options = {} )
       response = Connection.new(options).get("users/#{@user}/keys")   
       public_keys = response.body
 
       # FIXME:response.raise_errorが正しく動作するのかを確認する
       # 登録されていないUserだとfile_nameがとれない
-      # 鍵の末尾に%が入っているので改行コードと余計な文字コードを除去するライブラリを作成しておく
       if public_keys.is_a? Array
-        binding.pry
         public_keys.each do |public_key| 
-          # FIXME: only develop mode
-          puts "============================"
-          puts "create files"
           GetGithubPubKeys::Files.create public_key["id"], public_key["key"]
-          puts "============================"
         end
       else
-        # FIXME: only develop mode
-        puts "============================"
-        puts "create files"
         GetGithubPubKeys::Files.create public_keys["id"], public_keys["key"]
-        puts "============================"
       end
     end
   end
