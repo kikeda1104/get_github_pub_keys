@@ -18,14 +18,15 @@ module GetGithubPubKeys
     end
 
     # public_keys file create to .ssh directory.
-    # FIXME: githubのapiから手に入れる公開鍵のフォーマットについて調べる。
-    # 恐らく文字列のまま文字コードだけ気にしていれば良さそう
     def self.create(file_name, body)
       file_name = file_name.to_s
       file_name = File.basename(file_name)
-      # FIXME: 保存先がファイル実行ディレクトリになっている
       file_name = file_name + "_" + Time.now.strftime("%Y%0m%0d%0H%0M%0S") + DEFAULT_IDENTIFY
-      open(DEFAULT_SSH_DIRECTORY + "/" + file_name, "w:eucJP") {|file| file.write(body)}
+      body = body.gsub("\n","")
+      File.open(DEFAULT_SSH_DIRECTORY + "/" + file_name, "w") do |file|
+        file.puts body
+      end
+      puts "Create public_key file: #{file_name}."
     rescue => e
       puts e.message
       nil
