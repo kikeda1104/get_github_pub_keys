@@ -1,6 +1,6 @@
 # get_github_pub_keys
 
-### githubの公開鍵をローカルにファイルとして保存するgem
+### githubに登録している公開鍵をローカルの.sshにファイルとして保存するgem
 
 ## Installtion
 
