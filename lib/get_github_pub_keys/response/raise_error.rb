@@ -2,6 +2,7 @@
 
 require 'faraday'
 
+# FIXME: 未確認
 module GetGithubPubKeys
   module Response
     class RaiseError < Faraday::Response::Middleware
