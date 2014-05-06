@@ -18,7 +18,7 @@ GetGithubPubKeys.new(user_name)
 GetGithubPubKeys.find_and_create
 ```
 
-(まだテスト、機能面で不足がある開発版です)
+(まだテスト、機能面,英語などで不足がある開発版です)
 
 ## Contributing
 
