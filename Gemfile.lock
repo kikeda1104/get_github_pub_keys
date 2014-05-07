@@ -5,7 +5,6 @@ PATH
       faraday (~> 0.8.9)
       faraday_middleware
       rails (~> 4.1.0)
-      rspec
 
 GEM
   remote: https://rubygems.org/
@@ -123,4 +122,5 @@ DEPENDENCIES
   get_github_pub_keys!
   pry
   pry-byebug
+  rspec
   sqlite3
