@@ -5,17 +5,9 @@ module GetGithubPubKeys
   class Client
     include Connection
     include GetGithubPubKeys::Files
-    attr_accessor :path
 
     def initialize(user=nil) 
       @user = user
-    end
-
-    # confirm .ssh directory
-    def confirm
-      ssh_create unless ssh_exists?
-    rescue
-      raise ".ssh don't exists."
     end
 
     def find_and_create( options = {} )
