@@ -21,5 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency "faraday_middleware"
 
   s.add_development_dependency "rspec"
+  s.add_development_dependency "rails", "~> 4.0.4"
   s.add_development_dependency "sqlite3"
 end
