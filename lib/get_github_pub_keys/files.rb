@@ -10,7 +10,7 @@ module GetGithubPubKeys
       file_name = file_name.to_s
       file_name = File.basename(file_name)
       file_name = file_name + "_" + Time.now.strftime("%Y%0m%0d%0H%0M%0S") + DEFAULT_IDENTIFY
-      body = body.gsub("\r\n","").gsub("\n","") # TODO: Windows動作未確認
+      body = body.gsub("\n","") # TODO: Windows動作未確認
       File.open(DEFAULT_SSH_DIRECTORY + "/" + file_name, "w") do |file|
         file.puts body
       end
