@@ -1,6 +1,7 @@
 # coding: utf-8
 
 require 'faraday'
+require 'get_github_pub_keys/error'
 
 # FIXME: 未確認
 module GetGithubPubKeys
