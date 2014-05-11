@@ -14,9 +14,6 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-
-
-
 Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
@@ -28,5 +25,11 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
+require 'rubygems'
+require 'rake'
+require 'rspec/core/rake_task'
+
+desc "Run all specs in spec directory"
+Rspec::Core::RakeTask.new()
 
 task default: :spec
