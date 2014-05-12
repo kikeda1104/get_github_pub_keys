@@ -13,6 +13,11 @@ describe GetGithubPubKeys::Client do
       client = GetGithubPubKeys::Client.new("hoge")
       expect(client).to be_a_kind_of(GetGithubPubKeys::Client)
     end
+
+    it "is failuer" do
+      client = GetGithubPubKeys::Client.new()
+      expect(client).to be_nil
+    end
   end
 
   describe 'Client#find_and_create' do
@@ -21,5 +26,11 @@ describe GetGithubPubKeys::Client do
       client = GetGithubPubKeys::Client.new("hoge")
       expect(client.respond_to?("find_and_create").to be_nil
     end
+
+    it "" do
+      client = GetGithubPubKeys::Client.new("kikeda1104")
+      expect(client).to respond_to(:
+    end
   end
 end
+

@@ -15,8 +15,7 @@ describe GetGithubPubKeys do
     end
 
     it "non github user" do
-      get_github_pub_keys = GetGithubPubKeys.new("hogehoge9999")
-      expect(get_github_pub_keys).to be_a_kind_of(GetGithubPubKeys::Connection)
+      pending
     end
 
     it "github user" do
