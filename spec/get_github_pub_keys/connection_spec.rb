@@ -1,6 +1,7 @@
 # coding: utf-8
 
 require 'spec_helper'
+require 'faraday'
 
 describe GetGithubPubKeys do
   describe "Connection#new" do
@@ -21,6 +22,14 @@ describe GetGithubPubKeys do
     it "github user" do
       get_github_pub_keys = GetGithubPubKeys.new("kikeda1104")
       expect(get_github_pub_keys).to be_a_kind_of(GetGithubPubKeys::Connection)
+    end
+  end
+
+  describe 'GetGithubPubKeys::Connection#get' do
+    before do
+      builder.adapter :test, stubs do |stub|
+        stub.get('/users/') {[ 200, {}, 'shrimp' ]}
+      end
     end
   end
 end
