@@ -4,7 +4,7 @@ require 'faraday_middleware'
 
 module GetGithubPubKeys
   module Connection
-    def self.new( options = {} )
+    def self.new()
       Faraday.new( url: 'https://api.github.com' ) do |faraday|
         faraday.request :url_encoded
         faraday.request :json
