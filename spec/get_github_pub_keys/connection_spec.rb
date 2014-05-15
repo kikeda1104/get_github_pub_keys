@@ -24,13 +24,5 @@ describe GetGithubPubKeys do
       expect(get_github_pub_keys).to be_a_kind_of(GetGithubPubKeys::Connection)
     end
   end
-
-  describe 'GetGithubPubKeys::Connection#get' do
-    before do
-      builder.adapter :test, stubs do |stub|
-        stub.get('/users/') {[ 200, {}, 'shrimp' ]}
-      end
-    end
-  end
 end
 
