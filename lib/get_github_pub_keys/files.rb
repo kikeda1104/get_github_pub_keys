@@ -15,10 +15,10 @@ module GetGithubPubKeys
         file.puts body
       end
       puts "Create public_key file: #{file_name}."
+      file_name
     rescue => e
       # FIXME: 例外処理
       puts e.message
-      nil
     end
   end
 end
