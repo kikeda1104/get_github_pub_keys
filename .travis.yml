@@ -1,15 +1,6 @@
 language: ruby
-ruby:
- - "2.0"
- - "2.1"
- - "2.2"
-before_install:
-before_script:
-script:
-
-notifications:
-  email:
-    - gankai1104@gmail.com
-  on_success: always # default: change
-  on_failure: always
+rvm:
+  - 2.1.1
+  - 2.0.0
+  - 1.9.3
 
