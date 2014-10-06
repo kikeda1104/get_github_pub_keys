@@ -1,5 +1,7 @@
 # get_github_pub_keys
 
+[![Build Status](https://travis-ci.org/kikeda1104/get_github_pub_keys.svg?branch=feature%2Fadd_travis)](https://travis-ci.org/kikeda1104/get_github_pub_keys)
+
 ### githubに登録している公開鍵をローカルの.sshにファイルとして保存するgem
 
 ## Installtion
