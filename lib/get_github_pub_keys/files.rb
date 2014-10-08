@@ -10,15 +10,13 @@ module GetGithubPubKeys
       file_name = file_name.to_s
       file_name = File.basename(file_name)
       file_name = file_name + "_" + Time.now.strftime("%Y%0m%0d%0H%0M%0S") + DEFAULT_IDENTIFY
-      body = body.gsub("\n","") # TODO: Windows動作未確認
+      body.chomp!
       File.open(DEFAULT_SSH_DIRECTORY + "/" + file_name, "w") do |file|
         file.puts body
       end
       puts "Create public_key file: #{file_name}."
     rescue => e
-      # FIXME: 例外処理
-      puts e.message
-      nil
+      abort e.message
     end
   end
 end
