@@ -7,8 +7,7 @@ module GetGithubPubKeys
     DEFAULT_IDENTIFY = '.pub'.freeze
     # public_keys file create to .ssh directory.
     def self.create(file_name, body)
-      file_name = file_name.to_s
-      file_name = File.basename(file_name)
+      file_name = File.basename(file_name.to_s)
       file_name = file_name + "_" + Time.now.strftime("%Y%0m%0d%0H%0M%0S") + DEFAULT_IDENTIFY
       body.chomp!
       File.open(DEFAULT_SSH_DIRECTORY + "/" + file_name, "w") do |file|
