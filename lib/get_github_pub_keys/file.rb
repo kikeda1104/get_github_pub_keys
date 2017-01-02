@@ -1,8 +1,7 @@
 # coding: utf-8
-# FIXME: 定数値を別のファイルにまとめたい
 
 module GetGithubPubKeys
-  module Files
+  module File
     DEFAULT_SSH_DIRECTORY = "/#{ENV["HOME"]}/.ssh".freeze
     DEFAULT_IDENTIFY = '.pub'.freeze
     # public_keys file create to .ssh directory.
