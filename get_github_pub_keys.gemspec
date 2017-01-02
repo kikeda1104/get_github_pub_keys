@@ -15,12 +15,11 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "faraday",' ~> 0.8', '>= 0.8.9'
-  s.add_dependency "faraday_middleware", '~> 0'
+  s.add_dependency "faraday",' ~> 0.10.0'
+  s.add_development_dependency 'faraday_middleware'
 
-  s.add_development_dependency "rspec", '~> 0'
-  s.add_development_dependency "rails", '~> 4.0', '>= 4.0.4'
-  s.add_development_dependency "sqlite3", '~> 0'
+  s.add_development_dependency "rspec", '~> 3.5'
+  s.add_development_dependency 'rake'
 end
