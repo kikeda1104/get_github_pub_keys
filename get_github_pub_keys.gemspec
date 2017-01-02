@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'faraday_middleware'
 
   s.add_development_dependency "rspec", '~> 3.5'
-  s.add_development_dependency "rails", '~> 5.0'
+  s.add_development_dependency 'rake'
 end
