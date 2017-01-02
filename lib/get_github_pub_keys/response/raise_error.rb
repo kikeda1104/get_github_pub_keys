@@ -29,13 +29,13 @@ module GetGithubPubKeys
       end
 
       private
-      
+
       def error_message(env)
         body = env[:body]
         if body.nil?
           nil
         elsif body['error'] && body['error']['message']
-          body['error']['message'] 
+          body['error']['message']
         elsif body['fault'] && body['fault']['faultstring']
           body['fault']['faultstring']
         end
