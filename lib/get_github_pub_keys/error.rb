@@ -5,7 +5,7 @@ module GetGithubPubKeys
   Error = Class.new(StandardError)
 
   ClientError = Class.new(Error)
-  
+
   BadRequest = Class.new(ClientError)
 
   NotAuthorized = Class.new(ClientError)
@@ -20,4 +20,3 @@ module GetGithubPubKeys
 
   ServiceUnavailable = Class.new(ServerError)
 end
-

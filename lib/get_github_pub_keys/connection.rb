@@ -4,15 +4,14 @@ require 'faraday_middleware'
 
 module GetGithubPubKeys
   module Connection
-    def self.new()
-      Faraday.new( url: 'https://api.github.com' ) do |faraday|
+    def self.new
+      Faraday.new(url: 'https://api.github.com') do |faraday|
         faraday.request :url_encoded
         faraday.request :json
-        faraday.response :json, :content_type => /\bjson$/
+        faraday.response :json, content_type: /\bjson$/
         faraday.response :logger
         faraday.adapter Faraday.default_adapter
       end
     end
   end
 end
-
