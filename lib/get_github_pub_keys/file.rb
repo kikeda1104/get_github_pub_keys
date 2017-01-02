@@ -2,7 +2,7 @@
 
 module GetGithubPubKeys
   module File
-    DEFAULT_SSH_DIRECTORY = "/#{ENV["HOME"]}/.ssh".freeze
+    DEFAULT_SSH_DIRECTORY = "/#{ENV['HOME']}/.ssh".freeze
     DEFAULT_IDENTIFY = '.pub'.freeze
     def self.create(file_name, body)
       file_name = ::File.basename(file_name.to_s)
@@ -17,4 +17,3 @@ module GetGithubPubKeys
     end
   end
 end
-

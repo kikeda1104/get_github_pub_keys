@@ -18,11 +18,9 @@ gem install get_github_pub_keys
 ```:ruby
 # irb or pry起動して
 require 'get_github_pub_keys'
-GetGithubPubKeys.new(user_name)
-GetGithubPubKeys.find_and_create
+user = GetGithubPubKeys.new(user_name)
+user.find_and_create
 ```
-
-(まだテスト、機能面,英語などで不足がある開発版です)
 
 ## Contributing
 

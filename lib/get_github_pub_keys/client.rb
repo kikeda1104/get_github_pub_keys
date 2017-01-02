@@ -1,16 +1,15 @@
 # coding: utf-8
 
 module GetGithubPubKeys
-
   class Client
     include Connection
     include GetGithubPubKeys::File
 
-    def initialize(user=nil)
+    def initialize(user = nil)
       @user = user
     end
 
-    def find_and_create( options = {} )
+    def find_and_create(options = {})
       response = Connection.new(options).get("users/#{@user}/keys")
       public_keys = response.body
 
@@ -22,4 +21,3 @@ module GetGithubPubKeys
     end
   end
 end
-
