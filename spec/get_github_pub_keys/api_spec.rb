@@ -5,7 +5,7 @@ require 'faraday'
 # デプロイする際に動く確認するテスト。
 describe GetGithubPubKeys do
   before(:each) do
-    conn = Faraday.new( url: 'https://api.github.com' ) do |faraday|
+    conn = Faraday.new(url: 'https://api.github.com') do |faraday|
       faraday.request :url_encoded
       faraday.request :json
       faraday.adapter Faraday.default_adapter
@@ -19,10 +19,9 @@ describe GetGithubPubKeys do
     end
 
     it 'Content-type is application/json' do
-    # FIXME: faraday_middlewareでparse_jsonを利用するとContent-typeをapplication/jsonに上書きしてしまう
+      # FIXME: faraday_middlewareでparse_jsonを利用するとContent-typeをapplication/jsonに上書きしてしまう
       response = conn.get
-      expect(response.env["CONTENT_TYPE"]).to eq("application/json")
+      expect(response.env['CONTENT_TYPE']).to eq('application/json')
     end
   end
 end
-
